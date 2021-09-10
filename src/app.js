@@ -14,7 +14,7 @@ app.get('/cats?', (request, response) => {
 })
 
 app.post('/cats', (request, response) => {
-    Cat.create(request.body).then(cat => response.status(201).json(cat).catch(err=> {
+    Cat.create(request.body).then(cat => response.status(201).json(cat).catch(err => {
         response.status(400).json({message: "error"})
     }))
     
